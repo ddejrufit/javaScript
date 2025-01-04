@@ -8,20 +8,46 @@
 </head>
 <body>
     
-    <div class="alert-box" id="alert">알림창    
-        <button onclick="offalert()">닫기</button>
+    <div class="alert-box" id="alert"> 
+        <p>
+            <span class="alert-text">아이디</span>를 입력해주세요.
+        </p>
+        <button onclick="onalert('none')">닫기</button>
     </div>
-    <button onclick="onalert()">버튼</button>
+    
+    <button onclick="onalert('block'),changetext('아이디')">버튼1</button>
+    <button onclick="onalert('block'),changetext('비밀번호')" >버튼2</button>
+
 
     <script>
 
-        function onalert(){
-            document.getElementById('alert').style.display = 'block';
+        function onalert(파라미터){
+            document.getElementById('alert').style.display = 파라미터 ;
         }
 
-        function offalert(){
-            document.getElementById('alert').style.display = 'none';
+        function changetext(a){
+            let x = document.getElementsByClassName("alert-text")[0];
+            x.innerText= a;
         }
+
+        // function onalert(){
+        //     document.getElementById('alert').style.display = 'block' ;
+        // }
+
+        // function offalert(){
+        //     document.getElementById('alert').style.display = 'none';
+        // }
+
+
+        function plus(파라미터){
+            2 + 파라미터
+        }
+
+        
+
+
+
+
 
     </script>
 </body>
