@@ -9,26 +9,51 @@
 <body>
     
     <div class="alert-box" id="alert"> 
-        <p>
-            <span class="alert-text">아이디</span>를 입력해주세요.
+        <p class="title1">
+            <!-- <span class="alert-text">아이디</span>를 입력해주세요. -->
+        알림창임
+        
         </p>
-        <button onclick="onalert('none')">닫기</button>
+        <button id="close">닫기</button>
     </div>
     
-    <button onclick="onalert('block'),changetext('아이디')">버튼1</button>
-    <button onclick="onalert('block'),changetext('비밀번호')" >버튼2</button>
+    <button onclick="아이디알림창('아이디')">버튼1</button>
+    <button onclick="아이디알림창('비번')" >버튼2</button>
 
 
     <script>
+
+        // event = 유저가 하는 조작
+        document.getElementById('close').addEventListener('click',function(){
+            document.getElementById('alert').style.display = 'none'
+        });
+
+   
+
+
+
+
 
         function onalert(파라미터){
             document.getElementById('alert').style.display = 파라미터 ;
         }
 
-        function changetext(a){
-            let x = document.getElementsByClassName("alert-text")[0];
-            x.innerText= a;
+        function 아이디알림창(a){
+            //클래스명은 중복일 가능성이 있음으로 주의 위에서 [0] 번째 찾아주세요
+            document.getElementsByClassName('title1')[0].innerHTML= a+'입력하셈';
+            document.getElementById('alert').style.display = 'block';
         }
+        
+
+        // function 비번알림창(){
+        //     document.getElementById('title').innerHTML='비번입력하셈';
+        //     document.getElementById('alert').style.display = 'block';
+        // }
+
+        // function changetext(a){
+        //     let x = document.getElementsByClassName("alert-text")[0];
+        //     x.innerText= a;
+        // }
 
         // function onalert(){
         //     document.getElementById('alert').style.display = 'block' ;
