@@ -20,9 +20,39 @@
     <div class="black-bg">
       <div class="white-bg">
         <h4>로그인하세요</h4>
-        <button class="btn btn-danger" id="close">닫기</button>
+        <form action="success.html">
+          <div class="my-3">
+            <input type="text" class="form-control" id="id">
+           </div>
+           <div class="my-3">
+             <input type="password" class="form-control" id="password">
+           </div>
+           <button type="submit" class="btn btn-primary submit">전송</button>
+           <button type="button" class="btn btn-danger" id="close">닫기</button>
+        </form> 
+        
       </div>
     </div> 
+
+    <script>
+ $('.submit').on('click', function(e) {
+    if(document.querySelector('#id').value == ''){
+      e.preventDefault()
+      alert('아이디를 입력하시오.')
+    } 
+    else if  (document.querySelector('#password').value == '') { // password 라는 id 를 선택하고 해당 input이 공백일 경우
+        e.preventDefault() // 폼 전송을 막음
+        alert('비밀번호를 입력해주세요') // '비밀번호를 입력해주세요' 라는 경고창을 띄움
+    }
+  });
+    </script>
+
+
+
+
+
+
+
   
     <!-- one-way UI 애니메이션 a to b
      1.시작
@@ -51,12 +81,14 @@
         <li class="list-group-item">And a fifth one</li>
       </ul>
       
-      
-      <button id="modal-btn">로그인</button>
+      <div class="main-bg">
+        <h4>Shirts on sale</h4>
+      <button id="login" class="btn btn-danger">로그인</button>
+        </div>
 
       <script>
         // class 붙이기
-        $('#modal-btn').on('click', function(){
+        $('#login').on('click', function(){
           // document.querySelector('.black-bg').classList.add('show-modal');
           $('.black-bg').addClass('show-modal');
         })
