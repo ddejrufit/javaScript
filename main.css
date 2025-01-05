@@ -7,7 +7,7 @@
 }
 
 
-
+/* navbar */
 .list-group{
     display: none;
 }
@@ -15,3 +15,22 @@
 .show{
     display: block;
 }
+
+/*  모달창 css */
+.black-bg {
+    width : 100%;
+    height : 100%;
+    position : fixed;
+    background : rgba(0,0,0,0.5);
+    z-index : 5;
+    padding: 30px;
+    display: none;
+  }
+  .white-bg {
+    background: white;
+    border-radius: 5px;
+    padding: 30px;
+    display: none;
+  } 
+
+
