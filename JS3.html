@@ -46,17 +46,37 @@
       <button id="modal-btn">로그인</button>
 
       <script>
-        // 로그인창 열기
+        // class 붙이기
         $('#modal-btn').on('click', function(){
-          $('.black-bg').show()
-          
+          // document.querySelector('.black-bg').classList.add('show-modal');
+          $('.black-bg').addClass('show-modal');
         })
+          
+
+
+
+
+
+        // // 로그인창 열기
+        // $('#modal-btn').on('click', function(){
+        //   $('.black-bg').show()
+          
+        // })
 
         // 로그인창 닫기
+
         $('#close').on('click',function(){
-          $('.black-bg').hide()
-         
+          $('.black-bg').removeClass('show-modal');
         })
+
+
+
+
+
+        // $('#close').on('click',function(){
+        //   $('.black-bg').hide()
+         
+        // })
 
 
 
