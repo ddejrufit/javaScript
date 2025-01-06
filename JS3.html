@@ -35,16 +35,35 @@
     </div> 
 
     <script>
- $('.submit').on('click', function(e) {
-    if(document.querySelector('#id').value == ''){
-      e.preventDefault()
-      alert('아이디를 입력하시오.')
-    } 
-    else if  (document.querySelector('#password').value == '') { // password 라는 id 를 선택하고 해당 input이 공백일 경우
+
+    
+
+      $('form').on('submit', function(e){
+        if(document.querySelector('#id').value == ''){
+          e.preventDefault()
+          alert('아이디를 입력하시오.')
+        } else if(document.querySelector('#password').value == ''){
+          e.preventDefault() // 폼 전송을 막음
+            alert('비밀번호를 입력해주세요') 
+        } else if(document.querySelector('#password').value.length < 6 ){
         e.preventDefault() // 폼 전송을 막음
-        alert('비밀번호를 입력해주세요') // '비밀번호를 입력해주세요' 라는 경고창을 띄움
-    }
-  });
+        alert('비밀번호는 6자 이상입니다.') 
+        }
+      });
+
+
+
+
+//  $('.submit').on('click', function(e) {
+//     if(document.querySelector('#id').value == ''){
+//       e.preventDefault()
+//       alert('아이디를 입력하시오.')
+//     } 
+//     else if  (document.querySelector('#password').value == '') { // password 라는 id 를 선택하고 해당 input이 공백일 경우
+//         e.preventDefault() // 폼 전송을 막음
+//         alert('비밀번호를 입력해주세요') // '비밀번호를 입력해주세요' 라는 경고창을 띄움
+//     }
+//   });
     </script>
 
 
