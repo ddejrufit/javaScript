@@ -46,3 +46,7 @@
     background: lightgrey;
   }
 
+  .dark{
+    background: black;
+    color: white;
+  }

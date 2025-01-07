@@ -15,7 +15,7 @@
   crossorigin="anonymous"></script>
     <title>Hello, world!</title>
   </head>
-  <body>
+  <body >
 
     <div class="black-bg">
       <div class="white-bg">
@@ -141,7 +141,68 @@
           </button>
         </div>
       </nav> 
+            <p>태조 이성계가 태어난 년도는?</p>
+      <input type="text" id="answer">
+      <button id="send-answer">제출</button>
+
       <script>
+        var a;
+       let b = 0;
+       
+
+       $('#send-answer').on('click',function(){
+         a = document.querySelector('#answer').value 
+        
+        if(a == 1335){
+          alert('성공');
+        }else{
+          alert('실패');
+          b++ ; 
+          
+          if(b == 3){
+            alert('바부');
+          }
+        }
+       });
+        
+      </script>
+
+      <script>
+
+        // var
+        // let << 재선언 불가
+        // const << 재선언,재할당 불가
+
+
+        // let age = 26;
+        // const place = '구리';
+
+
+        // //이자율 계산
+        // var 예금액 = 10000;
+        // var 미래예금액 = 0;
+
+        // if(예금액 < 50000){
+        //   미래예금액 = 예금액  * 1.15 *1.15
+
+        //   console.log(미래예금액)
+        // }else{
+        //   미래예금액 = 예금액 * 1.2 * 1.2
+        //   console.log(미래예금액)
+        // }
+
+        // // 3/2 2번 리필
+        
+        // var first = 360;
+        // var second = first  *  (2/3)
+        // var third = second * (2/3)
+
+        // console.log(first + second + third)
+        //
+
+
+
+
 
         var count = 0;
         document.querySelector('.badge').addEventListener('click',function(){
