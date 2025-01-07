@@ -88,15 +88,26 @@
     
 
       $('form').on('submit', function(e){
-        if(document.querySelector('#id').value == ''){
+
+        var a = document.querySelector('#id').value; 
+        var b = document.querySelector('#password').value;
+
+        if(a == ''){
           e.preventDefault()
           alert('아이디를 입력하시오.')
-        } else if(document.querySelector('#password').value == ''){
+        }else if (/\S + @\S + .\S + /.test(a)){
+          alert('이메일형식으로 입력해주세요.')
+          e.preventDefault()
+        } 
+        else if(b == ''){
           e.preventDefault() // 폼 전송을 막음
             alert('비밀번호를 입력해주세요') 
-        } else if(document.querySelector('#password').value.length < 6 ){
+        } else if(b.length < 6 ){
         e.preventDefault() // 폼 전송을 막음
         alert('비밀번호는 6자 이상입니다.') 
+        }else if(/A-Z/.test(b)){
+          alert('비밀번호에 대문자가 적어도 1개 필요합니다.')
+          e.preventDefault()
         }
       });
 
