@@ -141,7 +141,7 @@
           </button>
         </div>
       </nav> 
-            <p>태조 이성계가 태어난 년도는?</p>
+            <!-- <p>태조 이성계가 태어난 년도는?</p>
       <input type="text" id="answer">
       <button id="send-answer">제출</button>
 
@@ -165,7 +165,7 @@
         }
        });
         
-      </script>
+      </script> -->
 
       <script>
 
@@ -233,7 +233,34 @@
       <button id="login" class="btn btn-danger">로그인</button>
         </div>
 
+        <div class="alert alert-danger">
+          5초 이내 구매시 사은품 증정
+        </div>
+
+
+
       <script>
+
+        var a = 5;
+
+        setTimeout(function(){
+          $('.alert').hide();
+        },5000)
+
+        setInterval(function(){
+          a -= 1; 
+          $('.alert').html( a + '초 이내 구매시 사은품 증정')
+        },1000);
+
+       
+
+
+
+
+
+
+
+
         // class 붙이기
         $('#login').on('click', function(){
           // document.querySelector('.black-bg').classList.add('show-modal');
