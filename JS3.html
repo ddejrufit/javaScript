@@ -242,11 +242,12 @@
       <script>
 
         var a = 5;
-
+      // 5초 후에  
         setTimeout(function(){
           $('.alert').hide();
         },5000)
 
+        // 1초 마다
         setInterval(function(){
           a -= 1; 
           $('.alert').html( a + '초 이내 구매시 사은품 증정')
