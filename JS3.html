@@ -270,47 +270,38 @@
         <script>
           var sl = 0;
           $('.slide-1').on('click',function(){
-            $('.slide-container').css('transform', 'translateX(0vw)');
             sl = 0;
+            $('.slide-container').css('transform', 'translateX(' + sl + 'vw)');
+           
           })
 
           $('.slide-2').on('click',function(){
-            $('.slide-container').css('transform', 'translateX(-100vw)');
-          sl=1;
+            sl=1;
+            $('.slide-container').css('transform', 'translateX(-' + sl + '00vw)');
+          
           })
           
           $('.slide-3').on('click',function(){
-            $('.slide-container').css('transform', 'translateX(-200vw)');
             sl=2
+            $('.slide-container').css('transform', 'translateX(-'+ sl +'00vw)');
+            
           })
 
           
           $('.next').on('click',function(){
-            
-            if(sl == 0){
-              $('.slide-container').css('transform', 'translateX(-100vw)');
-              sl=1;
-            }else if (sl == 1){
-              $('.slide-container').css('transform', 'translateX(-200vw)');
-            sl=2
-            }else if (sl == 2){
-              $('.slide-container').css('transform', 'translateX(0vw)');
-            sl = 0;
+            if(sl<2){
+
+              sl ++ ;
+              $('.slide-container').css('transform', 'translateX(-' + sl + '00vw)');
+           
             }
           })
           
           $('.before').on('click',function(){
+              sl --;
+              $('.slide-container').css('transform', 'translateX(-' + sl + '00vw)');
+           
             
-            if(sl == 0){
-              $('.slide-container').css('transform', 'translateX(-200vw)');
-            sl=2
-            }else if (sl == 1){
-              $('.slide-container').css('transform', 'translateX(0vw)');
-              sl = 0;
-            }else if (sl == 2){
-              $('.slide-container').css('transform', 'translateX(-100vw)');
-              sl=1;
-            }
           })
           
 
