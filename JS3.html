@@ -245,6 +245,45 @@
         <h4>Shirts on sale</h4>
       <button id="login" class="btn btn-danger">로그인</button>
         </div>
+
+        <script>
+
+          //부가세 계산
+          console.log(vat(60000))
+
+          //반올림 toFixed
+          function vat(a){
+            var num = (a * 1.1).toFixed(2);
+          //toFixed 쓰고 나면 문자형으로 바뀜
+            return parseFloat(num)
+          }
+          //분,초 입력시 ms로 변환
+          function ms로(a,b){
+            var time = ((a * 60) + b) * 1000
+            return time;
+          }
+          console.log(ms로(2,10))
+         // 10% 할인 첫구매시 1.5달러 할인
+          function 할인(a,b){
+            var pay = a - (a * 0.1)
+            if(b == true){
+              pay -= 1.5;
+            }
+            return pay;
+          }
+          console.log(할인(10,true))
+        </script>
+
+
+
+
+
+
+
+
+
+
+
       <div style="overflow: hidden;">
         <div class="slide-container">
           <div class="slide-box">
