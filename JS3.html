@@ -154,6 +154,24 @@
           </button>
         </div>
       </nav> 
+
+     <script>
+      //스크롤 이벤트
+      
+      window.addEventListener('scroll',function(){
+        var rol = window.scrollY
+        if(rol > 100){
+          $('.navbar-brand').css('font-size','20px')
+        }else{
+          $('.navbar-brand').css('font-size','30px')
+        }
+      });
+
+     </script>
+
+
+
+
             <!-- <p>태조 이성계가 태어난 년도는?</p>
       <input type="text" id="answer">
       <button id="send-answer">제출</button>
@@ -246,32 +264,52 @@
       <button id="login" class="btn btn-danger">로그인</button>
         </div>
 
+
+        <div class="lorem" style="width: 200px; height: 100px; overflow-y: scroll">
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae voluptas voluptatum minus praesentium fugit debitis at, laborum ipsa itaque placeat sit, excepturi eius. Nostrum perspiciatis, eligendi quae consectetur praesentium exercitationem.
+        </div> 
+
         <script>
 
-          //부가세 계산
-          console.log(vat(60000))
+          //div의 스크롤바 내린 양 + 눈에 보이는 div높이 == div의 실제 높이
+         $('.lorem').on('scroll',function(){
+          var 스크롤양 = document.querySelector('.lorem').scrollTop;
+          var 실제높이 = document.querySelector('.lorem').scrollHeight;
+          var 높이 = document.querySelector('.lorem').clientHeight;
+          if(스크롤양+높이+0.5 == 실제높이){
+            alert('다 읽으셨습니다.')
+          }
+          console.log(스크롤양,실제높이,높이);
+         })
 
-          //반올림 toFixed
-          function vat(a){
-            var num = (a * 1.1).toFixed(2);
-          //toFixed 쓰고 나면 문자형으로 바뀜
-            return parseFloat(num)
-          }
-          //분,초 입력시 ms로 변환
-          function ms로(a,b){
-            var time = ((a * 60) + b) * 1000
-            return time;
-          }
-          console.log(ms로(2,10))
-         // 10% 할인 첫구매시 1.5달러 할인
-          function 할인(a,b){
-            var pay = a - (a * 0.1)
-            if(b == true){
-              pay -= 1.5;
-            }
-            return pay;
-          }
-          console.log(할인(10,true))
+
+
+
+
+        //   //부가세 계산
+        //   console.log(vat(60000))
+
+        //   //반올림 toFixed
+        //   function vat(a){
+        //     var num = (a * 1.1).toFixed(2);
+        //   //toFixed 쓰고 나면 문자형으로 바뀜
+        //     return parseFloat(num)
+        //   }
+        //   //분,초 입력시 ms로 변환
+        //   function ms로(a,b){
+        //     var time = ((a * 60) + b) * 1000
+        //     return time;
+        //   }
+        //   console.log(ms로(2,10))
+        //  // 10% 할인 첫구매시 1.5달러 할인
+        //   function 할인(a,b){
+        //     var pay = a - (a * 0.1)
+        //     if(b == true){
+        //       pay -= 1.5;
+        //     }
+        //     return pay;
+        //   }
+        //   console.log(할인(10,true))
         </script>
 
 
@@ -355,7 +393,7 @@
 
       <script>
 
-        var a = 5;
+        var sec = 5;
       // 5초 후에  
         setTimeout(function(){
           $('.alert').hide();
@@ -363,8 +401,8 @@
 
         // 1초 마다
         setInterval(function(){
-          a -= 1; 
-          $('.alert').html( a + '초 이내 구매시 사은품 증정')
+          sec -= 1; 
+          $('.alert').html( sec + '초 이내 구매시 사은품 증정')
         },1000);
 
        
