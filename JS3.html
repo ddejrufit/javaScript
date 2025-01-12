@@ -153,14 +153,32 @@
             <span class="navbar-toggler-icon"></span>
           </button>
         </div>
+        <div class="progress" style="width: 100vw;">
+          <div class="progress-bar" role="progressbar" style="width: 0vw;"  aria-valuemin="0" aria-valuemax="100">0%</div>
+        </div>
       </nav> 
 
      <script>
+
+
+
+
+
+
+
+
+
       //스크롤 이벤트
       
       window.addEventListener('scroll',function(){
-        var rol = window.scrollY
-        if(rol > 100){
+          
+          var z = (window.scrollY.toFixed(0) / 194) * 100
+          
+          $('.progress-bar').css('width',z+'vw')
+          if(z <= 100){
+          $('.progress-bar').html (z.toFixed(0)+'%');
+        }
+        if(window.scrollY > 100){
           $('.navbar-brand').css('font-size','20px')
         }else{
           $('.navbar-brand').css('font-size','30px')
@@ -272,20 +290,22 @@
         <script>
 
           //div의 스크롤바 내린 양 + 눈에 보이는 div높이 == div의 실제 높이
-         $('.lorem').on('scroll',function(){
+          // 스크롤 이벤트 리스너의 주의점
+          // 여러번 나옴으로 컴퓨터에 부담을 준다
+          $('.lorem').on('scroll',function(){
           var 스크롤양 = document.querySelector('.lorem').scrollTop;
           var 실제높이 = document.querySelector('.lorem').scrollHeight;
           var 높이 = document.querySelector('.lorem').clientHeight;
+          
           if(스크롤양+높이+0.5 == 실제높이){
             alert('다 읽으셨습니다.')
           }
-          console.log(스크롤양,실제높이,높이);
+
          })
 
+         
 
-
-
-
+         
         //   //부가세 계산
         //   console.log(vat(60000))
 
