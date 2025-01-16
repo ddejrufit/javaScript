@@ -23,8 +23,55 @@
       </div>
     </div>
 
+
+    <form class="container my-5 form-group">
+      <p>상품선택</p>
+      <select class="form-select mt-2">
+        <option>모자</option>
+        <option>셔츠</option>
+      </select>
+      <select class="size-select">
+        <option>95</option>
+        <option>100</option>
+        <option>105</option>
+        <option>110</option>
+        <option>115</option>
+        <option>120</option>
+      </select>
+    </form>
+
+
+
+
+
+
+
+
+
+
     <script>
-      
+
+
+      $('.form-select').on('input',function(){
+
+        var 선택품목 = document.querySelector('.form-select').value
+        if(선택품목 == '셔츠'){
+          $('.size-select').addClass('show')
+        }else{
+          $('.size-select').removeClass('show')
+         }
+      })
+
+      // $('.form-select').eq(0).on('input', function(){
+
+      //   var value = $('.form-select').eq(0).val();
+      //   if (value == '셔츠') {
+      //     $('.form-select').eq(1).removeClass('form-hide');
+      //   }
+
+      // });
+
+
       var car = ['소나타', 50000, 'white'];
       var car2= {name : '소나타', price: [50000,3000,4000]}
     
@@ -32,7 +79,7 @@
       // $('#price').html(car2['price'])
       $('.car-price').html(car2.price[0])
 
-
+      
     </script>
 
 
