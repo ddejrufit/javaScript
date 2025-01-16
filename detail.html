@@ -18,17 +18,20 @@
   <body >
     <div class="container mt-3">
       <div class="card p-3">
-        상품명 / 가격
+        <span clas="car-title">상품명</span>
+         <span class="car-price">가격</span>
       </div>
     </div>
 
     <script>
       
       var car = ['소나타', 50000, 'white'];
-      var car2= {name : '소나타', price: 50000}
-      
-      $('.card').html (car2['name'] + ' / ' + car2['price']);
-      
+      var car2= {name : '소나타', price: [50000,3000,4000]}
+    
+      $('.car-title').html(car2.name)
+      // $('#price').html(car2['price'])
+      $('.car-price').html(car2.price[0])
+
 
     </script>
 
