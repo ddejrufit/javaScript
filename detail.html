@@ -16,6 +16,22 @@
     <title>Hello, world!</title>
   </head>
   <body >
+    <div class="container mt-3">
+      <div class="card p-3">
+        상품명 / 가격
+      </div>
+    </div>
+
+    <script>
+      
+      var car = ['소나타', 50000, 'white'];
+      var car2= {name : '소나타', price: 50000}
+      
+      $('.card').html (car2['name'] + ' / ' + car2['price']);
+      
+
+    </script>
+
 
     <style>
         ul.list {
