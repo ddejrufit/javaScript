@@ -29,14 +29,12 @@
       <select class="form-select mt-2">
         <option>모자</option>
         <option>셔츠</option>
+        <option>바지</option>
       </select>
       <select class="size-select">
         <option>95</option>
         <option>100</option>
-        <option>105</option>
-        <option>110</option>
-        <option>115</option>
-        <option>120</option>
+      
       </select>
     </form>
 
@@ -44,19 +42,39 @@
 
 
 
-
-
-
+      <div id="test">
+        
+      </div>
 
 
     <script>
 
+      // 
+      // var asd = document.createElement('p');
+      // asd.innerHTML = '안녕';
+      // document.querySelector('#test').appendChild(a);
+
+      // var 템플릿 = '<p>안녕</p>'
+      // document.querySelector('#test').insertAdjacentHTML('beforeend',템플릿);
+     
+     
+
+  
+   
 
       $('.form-select').on('input',function(){
+        var shirts = `<option>95</option>
+                    <option>100</option>`
+       var pants = `<option>28</option>
+                    <option>30</option>`
 
         var 선택품목 = document.querySelector('.form-select').value
         if(선택품목 == '셔츠'){
           $('.size-select').addClass('show')
+          $('.size-select').html(shirts)
+        }else if(선택품목 == '바지'){
+          $('.size-select').addClass('show')
+          $('.size-select').html(pants)
         }else{
           $('.size-select').removeClass('show')
          }
