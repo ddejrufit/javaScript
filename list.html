@@ -133,12 +133,17 @@
         }
         
 
-      
+        var basic = [] ;
+        localStorage.setItem('cart',JSON.stringify(basic))
         $('.buy').on('click',function(){
           var asd = $(this).siblings()[1]
-
-          console.log(asd)
-        localStorage.setItem('cart',JSON.stringify(asd))
+          // console.log(asd.innerHTML)
+          var cart = localStorage.getItem('cart'); 
+          basic = JSON.parse(cart);
+          // console.log(cart)
+          basic.push(asd.innerHTML)
+          console.log(basic)
+          localStorage.setItem('cart',JSON.stringify(basic))
      
      })
 
