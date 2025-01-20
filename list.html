@@ -88,11 +88,7 @@
           $('.row').html('')
           
           for (let i = 0; i < products.length; i++) { 
-            $('.row').append(`<div class="col-sm-4">
-              <img src="https://via.placeholder.com/600" class="w-100">
-              <h5>${aproducts[i].title}</h5>
-              <p>가격 : ${aproducts[i].price}</p>
-            </div>`)
+            상품카드(i)
           }
   
         })
@@ -112,29 +108,43 @@
         // console.log(새어레이)
 
 
-
-
-
-
-
-
         function 상품카드(as){
           $('.row').append(`<div class="col-sm-4">
               <img src="https://via.placeholder.com/600" class="w-100">
               <h5>${products[as].title}</h5>
               <p>가격 : ${products[as].price}</p>
+              <button class="buy">구매</button>
             </div>`)
       }
+  
 
-    
+      // var arr = [1,2,3];
+      // var newarr = JSON.stringify(arr);
+
+      // localStorage.setItem('num',newarr)
+      // var 꺼낸거 = localStorage.getItem('num');
+
+      // console.log(JSON.parse(꺼낸거));
 
         for (let i = 0; i < products.length; i++) { 
             상품카드(i)
             // document.querySelectorAll('.col-sm-4 h5')[i].innerHTML = products[i].title   
             // document.querySelectorAll('.col-sm-4 p')[i].innerHTML = "가격 : " + products[i].price
         }
-
         
+
+      
+        $('.buy').on('click',function(){
+          var asd = $(this).siblings()[1]
+
+          console.log(asd)
+        localStorage.setItem('cart',JSON.stringify(asd))
+     
+     })
+
+
+
+
       </script> 
 
 <div class="container">
