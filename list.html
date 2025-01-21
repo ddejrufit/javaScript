@@ -134,19 +134,26 @@
 
             // console.log(JSON.parse(꺼낸거))
 
-        var basic = [] ;
-        localStorage.setItem('cart',JSON.stringify(basic))
+        // var basic = [] ;
+        // localStorage.setItem('cart',JSON.stringify(basic))
 
         
-        $('.buy').on('click',function(){
-          var asd = $(this).siblings()[1].innerHTML
-         
-          var cart = localStorage.getItem('cart'); 
-          basic = JSON.parse(cart);
-          // console.log(cart)
-          basic.push(asd)
-          // console.log(basic)
-          localStorage.setItem('cart',JSON.stringify(basic))
+        $('.buy').on('click',function(e){
+          var title = $(e.target).siblings('h5').text()
+
+          if(localStorage.getItem('cart') != null ){
+            var 꺼낸거 = JSON.parse(localStorage.cart);
+            꺼낸거.push(title);
+            localStorage.setItem('cart',JSON.stringify(꺼낸거));
+          }
+          else{
+            localStorage.setItem('cart',JSON.stringify([title]))
+          }
+          // var asd = $(this).siblings()[1].innerHTML
+          // var cart = localStorage.getItem('cart'); 
+          // basic = JSON.parse(cart);
+          // basic.push(asd)
+          // localStorage.setItem('cart',JSON.stringify(basic))
      
      })
 
