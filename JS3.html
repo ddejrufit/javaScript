@@ -362,7 +362,7 @@
       <div style="overflow: hidden;">
         <div class="slide-container">
           <div class="slide-box">
-            <img src="car1.png" >
+            <img src="car1.png" draggable="false" >
           </div>
           <div class="slide-box">
             <img src="car2.png" >
@@ -373,6 +373,44 @@
         </div>
       </div>
 
+<script>
+
+var 시작좌표 = 0;
+var 눌렀냐 = false; 
+
+          $('.slide-box').eq(0).on('mousedown',function(e){
+            $('.slide-container').css('transition','all 0s')
+           시작좌표 = e.clientX
+           눌렀냐 = true; 
+
+          });
+
+          $('.slide-box').eq(0).on('mousemove',function(e){
+            if(눌렀냐 == true){
+            $('.slide-container').css('transform', 
+            `translateX( ${e.clientX - 시작좌표}px)`)
+            console.log(e.clientX - 시작좌표)
+          }
+          });
+
+          $('.slide-box').eq(0).on('mouseup',function(e){
+            눌렀냐= false
+             if(e.clientX-시작좌표 <= -400 ){
+              $('.slide-container').css('transition','all 1s')
+            $('.slide-container').css('transform', 'translateX(-100vw)');
+            
+             }else if(e.clientX-시작좌표 >= -400 ){
+              $('.slide-container').css('transition','all 1s')
+              $('.slide-container').css('transform', 'translateX(0vw)');
+              
+             }
+             
+          })
+          
+
+</script>
+
+
         <button class="slide-1">1</button>
         <button class="slide-2">2</button>
         <button class="slide-3">3</button>
@@ -381,7 +419,17 @@
         
 
 
-        <script>
+        <script>  
+
+
+
+
+
+
+
+
+
+
           var sl = 0;
           $('.slide-1').on('click',function(){
             sl = 0;
