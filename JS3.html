@@ -386,7 +386,7 @@ var 눌렀냐 = false;
           });
 
           $('.slide-box').eq(0).on('mousemove',function(e){
-            if(눌렀냐 == true){
+            if(눌렀냐 == true & e.clientX - 시작좌표 < 0){
             $('.slide-container').css('transform', 
             `translateX( ${e.clientX - 시작좌표}px)`)
             console.log(e.clientX - 시작좌표)
