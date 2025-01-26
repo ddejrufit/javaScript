@@ -40,10 +40,17 @@
               </li>
             </ul>
           </div>
+          <form class="d-flex">
+            <input class="form-control me-2"  placeholder="Search">
+            <button id="Search">검색</button>
+            
+          </form>
         </div>
       </nav>
+    
     </div>
     <div class='products-card'style="display: flex;">
+      
     <!-- <div style="display: flex;">
      <div class="card" style="width: 18rem; margin: 15vw;">
         <img src="pr1.JPG" class="card-img-top" alt="...">
@@ -56,11 +63,27 @@
     </div> -->
   </div>
     <script>
+      var a;
+      $('#search').on('click',function(e){
+        a = document.querySelector('.form-control').value
+        products =[
+            ...data.products.includes(a)
+          ]
+          alert()
+        $('.products-card').html('')
+        
+        for (let i = 0; i < products.length; i++) { 
+        상품카드(i)  
+        }
+      })
+
+
+
       function 상품카드(as){
         $('.products-card').append(`
       <div>
         <div class="card" style="width: 18rem; ">
-        <img src="pr${as + 1}.JPG" class="card-img-top" alt="..." style="height: 16rem;">
+        <img src="${products[as].photo}" class="card-img-top" alt="..." style="height: 16rem;">
         <div class="card-body">
           <h5 class="card-title">${products[as].title}</h5>
           <p class="card-text">${products[as].brand}</p>
