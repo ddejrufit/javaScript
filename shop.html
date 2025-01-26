@@ -21,7 +21,7 @@
 </head>
 <body>
     <div >
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="position: relative;">
         <div class="container-fluid">
           <a class="navbar-brand" href="#">인테리어</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -43,7 +43,8 @@
         </div>
       </nav>
     </div>
-    <div style="display: flex;">
+    <div class='products-card'style="display: flex;">
+    <!-- <div style="display: flex;">
      <div class="card" style="width: 18rem; margin: 15vw;">
         <img src="pr1.JPG" class="card-img-top" alt="...">
         <div class="card-body">
@@ -52,12 +53,41 @@
           <a href="#" class="btn btn-primary">담기</a>
         </div>
       </div>
-    </div>
-    
+    </div> -->
+  </div>
     <script>
+      function 상품카드(as){
+        $('.products-card').append(`
+      <div>
+        <div class="card" style="width: 18rem; ">
+        <img src="pr${as + 1}.JPG" class="card-img-top" alt="..." style="height: 16rem;">
+        <div class="card-body">
+          <h5 class="card-title">${products[as].title}</h5>
+          <p class="card-text">${products[as].brand}</p>
+          <p class="card-price">가격 : ${products[as].price}</p>
+          <a href="#" class="btn btn-primary">담기</a>
+        </div>
+        </div>`)
+      }
+      
+
+
+
+      var products = [];
       $.get('store.json').done(function(data){
-        console.log(data.products)
-       })
+        products =[
+            ...products,
+            ...data.products
+          ]
+          // $('.products-card').html('')
+          for (let i = 0; i < products.length; i++) { 
+
+            상품카드(i)  
+          }
+          });
+        
+        console.log(products)
+
         // $('.card-title').html()
         
 
