@@ -41,8 +41,8 @@
             </ul>
           </div>
           <form class="d-flex">
-            <input class="form-control me-2"  placeholder="Search">
-            <button id="Search">검색</button>
+            <input class="form-control me-2" type="text" placeholder="Search" id="search">
+            <button id="btn">검색</button>
             
           </form>
         </div>
@@ -63,19 +63,7 @@
     </div> -->
   </div>
     <script>
-      var a;
-      $('#search').on('click',function(e){
-        a = document.querySelector('.form-control').value
-        products =[
-            ...data.products.includes(a)
-          ]
-          alert()
-        $('.products-card').html('')
-        
-        for (let i = 0; i < products.length; i++) { 
-        상품카드(i)  
-        }
-      })
+      
 
 
 
@@ -109,10 +97,24 @@
           }
           });
         
-        console.log(products)
 
         // $('.card-title').html()
+        var a;
+      $('#btn').on('click',function(){
+        a = document.querySelector('#search').value
+
         
+
+          
+        $('.products-card').html('')
+        
+        
+        for (let i = 0; i < products.length; i++) { 
+          if(products[i].title.includes(a)){
+        상품카드(i)  
+          }
+        }
+      })
 
     </script>
 
