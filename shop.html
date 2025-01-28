@@ -79,6 +79,22 @@
       
       }
       
+      function 검색카드(as ,a){
+        $('.products-card').append(`
+      <div>
+        <div class="card" style="width: 18rem; ">
+        <img src="${products[as].photo}" class="card-img-top" alt="..." style="height: 16rem;">
+        <div class="card-body">
+          <h5 class="card-title">${products[as].title.replace
+        (a,`<span style="background:yellow">${a}</span>`)}</h5>
+          <p class="card-text">${products[as].brand}</p>
+          <p class="card-price">가격 : ${products[as].price}</p>
+          <a href="#" class="btn btn-primary">담기</a>
+        </div>
+        </div>`)
+      
+      }
+      
       var products = [];
       $.get('store.json').done(function(data){
           products =[
@@ -92,20 +108,26 @@
 
         
       var a;
+      
       $('#btn').on('click',function(e){
         
         a = document.querySelector('#search').value
 
         $('.products-card').html('') 
+    
         for (let i = 0; i < products.length; i++) { 
           if(products[i].title.includes(a)){
-        상품카드(i)  
-        var c =`${products[i].title.replace(a,`<span style="background:yellow">
-              ${a}</span>`)}`
-            $('.card-title').html(c)
-          }
-        }
+        검색카드(i,a)  
+        
+
         e.preventDefault()
+        
+          }
+         
+        }
+        
+        
+        
       })
 
      
