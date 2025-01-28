@@ -100,8 +100,9 @@
         for (let i = 0; i < products.length; i++) { 
           if(products[i].title.includes(a)){
         상품카드(i)  
-            $('.card-title').html(`<span style="background:yellow">
-              ${a}</span>${products[i].title.replace(a,'')}`)
+        var c =`${products[i].title.replace(a,`<span style="background:yellow">
+              ${a}</span>`)}`
+            $('.card-title').html(c)
           }
         }
         e.preventDefault()
