@@ -49,7 +49,8 @@
       </nav>
     
     </div>
-    <div class='products-card'style="display: flex;">
+    <div style="display: flex;">
+    <div class='products-card'style="display: flex; margin:30px ">
       
     <!-- <div style="display: flex;">
      <div class="card" style="width: 18rem; margin: 15vw;">
@@ -62,12 +63,19 @@
       </div>
     </div> -->
   </div>
+</div>
+  <div style="width: 100%; display: flex; justify-content: center;">
+  <div style="background-color: gainsboro; width: 95vw; height: 50vh; margin: 15px;display: flex;">
+    <h4 style="margin-left: 50px; margin-top: 30px; position: absolute;">장바구니</h4>
+    <div style="background-color: black; width: 90vw;height: 40vh; margin: auto;"></div>
+  </div>
+</div>
     <script>
    
       function 상품카드(as){
         $('.products-card').append(`
-      <div>
-        <div class="card" style="width: 18rem; ">
+      <div style="padding: 5px">
+        <div class="card" style="width: 18rem;">
         <img src="${products[as].photo}" class="card-img-top" alt="..." style="height: 16rem;">
         <div class="card-body">
           <h5 class="card-title">${products[as].title}</h5>
