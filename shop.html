@@ -67,9 +67,26 @@
   <div style="width: 100%; display: flex; justify-content: center;">
   <div style="background-color: gainsboro; width: 95vw; height: 50vh; margin: 15px;display: flex;">
     <h4 style="margin-left: 50px; margin-top: 30px; position: absolute;">장바구니</h4>
-    <div style="background-color: black; width: 90vw;height: 40vh; margin: auto;"></div>
+    <div style="background-color: black; width: 90vw;height: 40vh; margin: auto;" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
   </div>
 </div>
+
+<script>
+function allowDrop(ev) {
+  ev.preventDefault();
+}
+
+function drag(ev) {
+  ev.dataTransfer.setData("text", ev.target.id);
+}
+
+function drop(ev) {
+  ev.preventDefault();
+  var data = ev.dataTransfer.getData("text");
+  ev.target.appendChild(document.getElementById(data));
+}
+</script>
+
     <script>
    
       function 상품카드(as){
