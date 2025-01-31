@@ -54,7 +54,7 @@
       
     <!-- <div style="display: flex;">
      <div class="card" style="width: 18rem; margin: 15vw;">
-        <img src="pr1.JPG" class="card-img-top" alt="...">
+        <img src="pr1.JPG" class="card-img-top" alt="..." style="pointer-events:none;>
         <div class="card-body">
           <h5 class="card-title">Card title</h5>
           <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
@@ -65,13 +65,16 @@
   </div>
 </div>
   <div style="width: 100%; display: flex; justify-content: center;">
-  <div style="background-color: gainsboro; width: 95vw; height: 50vh; margin: 15px;display: flex;">
+  <div style="background-color: gainsboro; width: 95vw; height: 50vh; margin: 15px; display: flex;">
     <h4 style="margin-left: 50px; margin-top: 30px; position: absolute;">장바구니</h4>
     <div style="background-color: black; width: 90vw;height: 40vh; margin: auto;" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
   </div>
 </div>
 
 <script>
+  $('.card-img-top').on('drag',function(){
+
+  })
 function allowDrop(ev) {
   ev.preventDefault();
 }
@@ -82,7 +85,7 @@ function drag(ev) {
 
 function drop(ev) {
   ev.preventDefault();
-  var data = ev.dataTransfer.getData("text");
+  var data = ev.dataTransfer.getData("text")
   ev.target.appendChild(document.getElementById(data));
 }
 </script>
@@ -93,7 +96,7 @@ function drop(ev) {
         $('.products-card').append(`
       <div style="padding: 5px" draggable="true">
         <div class="card" style="width: 18rem;">
-        <img src="${products[as].photo}" class="card-img-top" alt="..." style="height: 16rem;">
+        <img src="${products[as].photo}" class="card-img-top" alt="..." style="height: 16rem; pointer-events:none;">
         <div class="card-body">
           <h5 class="card-title">${products[as].title}</h5>
           <p class="card-text">${products[as].brand}</p>
